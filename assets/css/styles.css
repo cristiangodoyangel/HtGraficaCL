@@ -1,0 +1,18 @@
+body { font-family: 'Segoe UI', Arial, sans-serif; }
+.hero-section { background: linear-gradient(120deg, #e0e7ef 0%, #f8fafc 100%); }
+.card-img-top { height: 180px; object-fit: cover; }
+.card { border-radius: 1rem; }
+.btn-success, .btn-outline-success { border-radius: 2rem; }
+footer { font-size: 0.95rem; }
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  background: #25d366;
+  border-radius: 50%;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  padding: 8px;
+  transition: transform 0.2s;
+}
+.whatsapp-float:hover { transform: scale(1.08); background: #1ebe57; }
