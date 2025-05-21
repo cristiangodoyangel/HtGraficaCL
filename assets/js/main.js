@@ -2,16 +2,16 @@
 
 // Lista de productos (puedes personalizar nombres y precios)
 const productos = [
-  { nombre: "Gráfica Vehicular e Industrial", precio: 35000 },
-  { nombre: "Señaléticas informativas y reflectivas", precio: 12000 },
-  { nombre: "Patentes mineras", precio: 9000 },
-  { nombre: "Ploteo de vehículos", precio: 45000 },
-  { nombre: "Adhesivos PVC", precio: 6000 },
-  { nombre: "Impresión Publicitaria", precio: 8000 },
-  { nombre: "Pendones", precio: 15000 },
-  { nombre: "Gigantografías", precio: 25000 },
-  { nombre: "Publicidad personalizada", precio: 20000 },
-  { nombre: "Sublimación y Estampado", precio: 7000 }
+  { nombre: "Gráfica Vehicular e Industrial" },
+  { nombre: "Señaléticas informativas y reflectivas" },
+  { nombre: "Patentes mineras" },
+  { nombre: "Ploteo de vehículos" },
+  { nombre: "Adhesivos PVC" },
+  { nombre: "Impresión Publicitaria" },
+  { nombre: "Pendones" },
+  { nombre: "Gigantografías" },
+  { nombre: "Publicidad personalizada" },
+  { nombre: "Sublimación y Estampado" }
 ];
 
 const productosLista = document.getElementById('productos-lista');
@@ -28,11 +28,8 @@ function renderProductos() {
   productos.forEach((prod, idx) => {
     const li = document.createElement('li');
     li.className = 'list-group-item d-flex justify-content-between align-items-center draggable-producto';
-    li.textContent = prod.nombre + ' ';
-    const span = document.createElement('span');
-    span.className = 'badge bg-secondary rounded-pill';
-    span.textContent = `$${prod.precio.toLocaleString()}`;
-    li.appendChild(span);
+    li.textContent = prod.nombre;
+
     li.setAttribute('draggable', 'true');
     li.dataset.idx = idx;
     li.addEventListener('dragstart', handleDragStart);
@@ -45,23 +42,17 @@ function renderCarrito() {
   if (carrito.length === 0) {
     dropPlaceholder.style.display = '';
     btnCotizarWsp.classList.add('disabled');
-    totalPrecio.textContent = '$0';
+
     return;
   }
   dropPlaceholder.style.display = 'none';
-  let total = 0;
   carrito.forEach((item, idx) => {
-    total += item.precio;
     const li = document.createElement('li');
     li.className = 'list-group-item d-flex justify-content-between align-items-center carrito-producto-row';
     const nombre = document.createElement('span');
     nombre.className = 'carrito-producto-nombre';
     nombre.textContent = item.nombre;
     li.appendChild(nombre);
-    const precio = document.createElement('span');
-    precio.className = 'carrito-producto-precio badge bg-success rounded-pill ms-2';
-    precio.textContent = `$${item.precio.toLocaleString()}`;
-    li.appendChild(precio);
     // Botón eliminar
     const btnDel = document.createElement('button');
     btnDel.className = 'btn btn-sm btn-danger ms-2';
@@ -75,7 +66,6 @@ function renderCarrito() {
     li.appendChild(btnDel);
     carritoLista.appendChild(li);
   });
-  totalPrecio.textContent = `$${total.toLocaleString()}`;
   btnCotizarWsp.classList.remove('disabled');
   updateWspLink();
 }
@@ -108,9 +98,8 @@ function updateWspLink() {
     return;
   }
   const mensaje = 'Hola, quiero cotizar los siguientes productos:%0A' +
-    carrito.map(item => `- ${item.nombre}: $${item.precio.toLocaleString()}`).join('%0A') +
-    `%0ATotal: $${carrito.reduce((a,b)=>a+b.precio,0).toLocaleString()}`;
-  btnCotizarWsp.href = `https://wa.me/56912345678?text=${mensaje}`;
+    carrito.map(item => `- ${item.nombre}`).join('%0A');
+  btnCotizarWsp.href = `https://wa.me/56951727028?text=${mensaje}`;
 }
 
 // Inicializar cotizador drag & drop

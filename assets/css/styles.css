@@ -28,28 +28,14 @@ body {
 }
 
 
-.carrito-producto-precio {
-  min-width: 100px;
-  text-align: right;
-  font-weight: bold;
-  color: #fff;
-  margin-left: 0;
-  display: block;
-}
+
 
 #productos-lista .draggable-producto {
   cursor: grab;
   transition: background 0.2s, box-shadow 0.2s;
 }
 
-.badge.bg-success {
-  background-color: #199e5a !important;
-  padding: 0.5em 1.4em;
-  font-size: 1.0em;
-  border-radius: 1.5em;
-  box-shadow: 0 2px 6px rgba(25,158,90,0.10);
-  letter-spacing: 0.5px;
-}
+
 #productos-lista .draggable-producto:active {
   cursor: grabbing;
 }
@@ -198,4 +184,47 @@ footer {
   color: #fff;
 }
 
+.clientes-banner-bg {
+  background: url('../img/banner.png') center center/cover no-repeat;
+  position: relative;
+  z-index: 1;
+}
+.clientes-banner-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.75);
+  z-index: 2;
+  pointer-events: none;
+}
+#clientes > .container, #clientes h2, #clientes .row {
+  position: relative;
+  z-index: 3;
+}
+#clientes h2 {
+  color: #fff;
+}
+
+.clientes-carousel-container {
+  overflow: hidden;
+  width: 100%;
+  margin: 2.5rem 0 1.5rem 0;
+  position: relative;
+}
+.clientes-carousel-track {
+  display: flex;
+  align-items: center;
+  animation: clientes-carousel-move 32s linear infinite;
+  width: max-content;
+}
+@keyframes clientes-carousel-move {
+  0% {transform: translateX(0);}
+  100% {transform: translateX(-50%);}
+}
+
+@media (max-width: 768px) {
+  .clientes-carousel-track .card {
+    min-width: 160px;
+    margin: 0 0.7rem;
+  }
+}
 
