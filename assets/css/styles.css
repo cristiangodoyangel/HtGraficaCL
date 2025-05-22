@@ -57,6 +57,26 @@ body {
   background: #f6f6f6;
 }
 
+.navbar {
+    align-items: stretch;
+}
+
+.navbar-brand {
+    padding-top: 0;
+    padding-bottom: 0;
+    display: flex;
+    align-items: center;
+    height: auto;
+}
+
+.navbar-logo {
+    height: 300% !important;
+    max-height: 380px !important;
+    width: auto;
+    display: inline-block;
+}
+
+
 /* Sticky navbar */
 .navbar {
   background: var(--color-navbar-bg) !important;
