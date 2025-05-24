@@ -90,11 +90,19 @@ body {
 }
 
 .navbar-logo {
-    height: 300% !important;
-    max-height: 380px !important;
+    height: 110px !important;
+    max-height: 110px !important;
     width: auto;
     display: inline-block;
+    transition: all 0.3s;
 }
+@media (max-width: 700px) {
+  .navbar-logo {
+    height: 54px !important;
+    max-height: 54px !important;
+  }
+}
+
 
 
 /* Sticky navbar */
@@ -195,6 +203,54 @@ html {
   margin-left: auto;
   margin-right: auto;
   max-width: 1800px;
+}
+
+@media (max-width: 700px) {
+  .hero-solo-img img {
+    display: none !important;
+  }
+}
+
+/* Centrado y responsividad para textos y tarjetas */
+@media (max-width: 991.98px) {
+  .navbar-nav {
+    text-align: center;
+  }
+  .navbar-nav .nav-link {
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+    font-size: 1.1rem;
+  }
+}
+@media (max-width: 767.98px) {
+  h1, h2, h3, .display-5, .fw-bold {
+    text-align: center !important;
+    font-size: 1.5rem !important;
+  }
+  .card-title, .card-text {
+    text-align: center;
+  }
+  .card {
+    margin-bottom: 1.5rem;
+    width: 100%;
+    max-width: 100%;
+  }
+  .row.g-4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .col-12.col-md-6.col-lg-4 {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+  }
+  .container, .clientes-carousel-container {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
 }
 
 
