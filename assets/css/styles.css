@@ -43,6 +43,15 @@ body {
   background: #f8d7da;
   box-shadow: 0 2px 8px rgba(217,4,41,0.08);
 }
+#productos-lista .list-group-item.cotizador-producto {
+  cursor: pointer !important;
+}
+#productos-lista .list-group-item.cotizador-producto:hover {
+  background: #d90429 !important;
+  color: #fff !important;
+  font-weight: bold !important;
+  cursor: pointer !important;
+}
 #drop-area {
   min-height: 180px;
   border: 2px dashed #d90429;
@@ -56,6 +65,17 @@ body {
 #carrito-lista .list-group-item {
   background: #f6f6f6;
 }
+
+.logo-cliente {
+  height: 100px;
+  max-height: 100px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
 .navbar {
     align-items: stretch;
@@ -86,8 +106,8 @@ body {
 }
 
 .navbar .navbar-brand img {
-  height: 64px !important;
-  max-height: 64px;
+  height: 110px !important;
+  max-height: 110px;
 }
 
 .navbar-nav .nav-link {
@@ -107,8 +127,8 @@ body {
   background: var(--color-navbar-bg) !important;
 }
 .navbar .navbar-brand img {
-  height: 64px !important;
-  max-height: 64px;
+  height: 96px !important;
+  max-height: 96px;
 }
 .navbar-nav .nav-link {
   color: var(--color-navbar-link) !important;
@@ -120,6 +140,63 @@ body {
 .navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
   color: var(--color-navbar-link-hover) !important;
 }
+
+/* Estilos personalizados adicionales abajo */
+
+.hero-solo-img {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: #000;
+}
+.hero-solo-img img {
+  height: auto;
+  max-height: 1800px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1800px;
+}
+
+
+
+.hero-section {
+  background: url('assets/img/back.png') center center/cover no-repeat !important;
+  min-height: 380px;
+  position: relative;
+}
+
+.clientes-banner-bg2 {
+  background: url('../img/back.png') center center/cover no-repeat;
+  position: relative;
+  z-index: 1;
+}
+
+.clientes-banner-bg2 h1,
+.clientes-banner-bg2 p,
+.clientes-banner-bg2 a.btn {
+  color: #fff !important;
+  font-weight: 900 !important;
+  text-shadow: 1px 1px 2px #000, 0 0 1px #000, 0 0 2px #000;
+  -webkit-text-stroke: 1px #000;
+  text-stroke: 1px #000;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+  background: transparent !important;
+}
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.60);
+  z-index: 1;
+  pointer-events: none;
+}
+
+
 
 /* Estilo tabla contacto */
 .table-contacto {
@@ -171,7 +248,9 @@ body {
 }
 
 .hero-section {
-  background: var(--color-gris-claro);
+  background: url('assets/img/back.png') center center/cover no-repeat;
+  position: relative;
+  background-color: var(--color-gris-claro);
 }
 
 .card-img-top {

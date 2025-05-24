@@ -6,5 +6,5 @@ window.addEventListener('DOMContentLoaded', function() {
       preloader.style.opacity = '0';
       setTimeout(() => preloader.remove(), 500);
     }
-  }, 1800); // Tiempo en ms (1.8 segundos)
+  }, 1900); // Tiempo en ms (3.2 segundos)
 });

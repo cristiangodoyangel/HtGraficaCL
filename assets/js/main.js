@@ -27,12 +27,15 @@ function renderProductos() {
   productosLista.innerHTML = '';
   productos.forEach((prod, idx) => {
     const li = document.createElement('li');
-    li.className = 'list-group-item d-flex justify-content-between align-items-center draggable-producto';
+    li.className = 'list-group-item d-flex justify-content-between align-items-center cotizador-producto';
     li.textContent = prod.nombre;
-
-    li.setAttribute('draggable', 'true');
     li.dataset.idx = idx;
-    li.addEventListener('dragstart', handleDragStart);
+    // Evento click para agregar al carrito
+    li.addEventListener('click', function() {
+      carrito.push(productos[idx]);
+      renderCarrito();
+      updateWspLink();
+    });
     productosLista.appendChild(li);
   });
 }
@@ -74,23 +77,6 @@ function handleDragStart(e) {
   e.dataTransfer.setData('producto-idx', e.target.dataset.idx);
 }
 
-dropArea.addEventListener('dragover', function(e) {
-  e.preventDefault();
-  dropArea.classList.add('bg-light');
-});
-dropArea.addEventListener('dragleave', function() {
-  dropArea.classList.remove('bg-light');
-});
-dropArea.addEventListener('drop', function(e) {
-  e.preventDefault();
-  dropArea.classList.remove('bg-light');
-  const idx = e.dataTransfer.getData('producto-idx');
-  if (typeof idx !== 'undefined' && productos[idx]) {
-    carrito.push(productos[idx]);
-    renderCarrito();
-    updateWspLink();
-  }
-});
 
 function updateWspLink() {
   if (carrito.length === 0) {
@@ -102,6 +88,6 @@ function updateWspLink() {
   btnCotizarWsp.href = `https://wa.me/56951727028?text=${mensaje}`;
 }
 
-// Inicializar cotizador drag & drop
+// Inicializar cotizador click to add
 renderProductos();
 renderCarrito();
