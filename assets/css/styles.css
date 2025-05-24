@@ -99,7 +99,7 @@ body {
 
 /* Sticky navbar */
 .navbar {
-  background: var(--color-navbar-bg) !important;
+  background: #000 !important;
   position: sticky;
   top: 0;
   z-index: 1030;
@@ -111,37 +111,76 @@ body {
 }
 
 .navbar-nav .nav-link {
-  color: var(--color-navbar-link) !important;
+  color: #fff !important;
   font-weight: 600;
+  font-size: 1.35rem;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
   letter-spacing: 0.5px;
   text-transform: uppercase;
   transition: color 0.2s;
 }
 
 .navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
-  color: var(--color-navbar-link-hover) !important;
+  color: #d90429 !important;
 }
 
 /* Navbar custom */
-.navbar {
-  background: var(--color-navbar-bg) !important;
-}
+/* El fondo ya es negro arriba, esta regla no es necesaria */
+
 .navbar .navbar-brand img {
-  height: 96px !important;
-  max-height: 96px;
+  height: 110px !important;
+  max-height: 110px;
 }
 .navbar-nav .nav-link {
-  color: var(--color-navbar-link) !important;
+  color: #fff !important;
   font-weight: 600;
+  font-size: 1.35rem;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
   letter-spacing: 0.5px;
   text-transform: uppercase;
   transition: color 0.2s;
 }
 .navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
-  color: var(--color-navbar-link-hover) !important;
+  color: #d90429 !important;
 }
 
 /* Estilos personalizados adicionales abajo */
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+@media (max-width: 900px) {
+  .navbar-toggler {
+    border-color: #d90429 !important;
+  }
+  .navbar-toggler-icon {
+    background-image: none !important;
+    position: relative;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .navbar-toggler-icon::before, .navbar-toggler-icon::after, .navbar-toggler-icon span {
+    content: '';
+    display: block;
+    background: #d90429;
+    height: 5px;
+    border-radius: 2px;
+    margin: 7px 0;
+    width: 100%;
+    transition: all 0.3s;
+    position: relative;
+  }
+  .navbar-toggler-icon span {
+    margin: 0;
+  }
+}
+
+/* Para que el ícono hamburguesa funcione, debes agregar <span></span> dentro de .navbar-toggler-icon en el HTML si no existe */
+
 
 .hero-solo-img {
   padding: 0;
@@ -208,6 +247,9 @@ body {
   background: var(--color-table-header);
   color: var(--color-principal);
   font-weight: 600;
+  font-size: 1.35rem;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
   vertical-align: middle;
 }
 .table-contacto td {
