@@ -307,9 +307,20 @@ html {
     text-align: center !important;
     font-size: 1.5rem !important;
   }
-  .card-title, .card-text {
-    text-align: center;
-  }
+  .card-title {
+  text-align: center;
+  font-family: 'Montserrat', 'Poppins', 'Roboto', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 1.18rem;
+  letter-spacing: 0.01em;
+}
+.card-text {
+  text-align: center;
+  font-family: 'Montserrat', 'Poppins', 'Roboto', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1.03rem;
+  letter-spacing: 0.01em;
+}  
   .card {
     margin-bottom: 1.5rem;
     width: 100%;
@@ -341,11 +352,7 @@ html {
   position: relative;
 }
 
-.clientes-banner-bg2 {
-  background: url('../img/back.jpg') center center/cover no-repeat;
-  position: relative;
-  z-index: 1;
-}
+
 
 .clientes-banner-bg2 h1,
 .clientes-banner-bg2 p,
@@ -471,11 +478,7 @@ footer {
   color: #fff;
 }
 
-.clientes-banner-bg {
-  background: url('../img/banner.png') center center/cover no-repeat;
-  position: relative;
-  z-index: 1;
-}
+
 .clientes-banner-overlay {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
