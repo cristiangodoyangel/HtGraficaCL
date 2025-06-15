@@ -41,6 +41,10 @@ function renderProductos() {
 }
 
 function renderCarrito() {
+  if (!carritoLista) console.error('carritoLista no está definido');
+  if (!dropPlaceholder) console.error('dropPlaceholder no está definido');
+  if (!btnCotizarWsp) console.error('btnCotizarWsp no está definido');
+  if (!carrito) console.error('carrito no está definido');
   carritoLista.innerHTML = '';
   if (carrito.length === 0) {
     dropPlaceholder.style.display = '';
